@@ -1,0 +1,13 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo
+    restart: always
+    container_name: api-flask
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: api-flask  
+      MONGO_URI: "mongodb://mongodb:27017/api-flask" 
+    volumes:
+      - ./mongo-data:/data/db
